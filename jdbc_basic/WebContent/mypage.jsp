@@ -24,6 +24,7 @@ for(int i=0; i<cookies.length; i++ ){
 		%><%=cookies[i].getValue() %><%
 		token_found = true;
 		sessTokenId = cookies[i].getValue();
+		System.out.println("sessTokenId="+sessTokenId);
 	}
 	else {
 		token_not_found = false;  //sessToken을 못 찾았다...
@@ -62,9 +63,9 @@ pstate.setString(1, sessTokenId);
 //select문을 실행시키고 반환되는 record들을 rs1에 담는다.
 ResultSet rs1 = pstate.executeQuery();
 
-String result;
 rs1.next();
 String name = rs1.getString("name");
+System.out.println("rs1.name="+name);
 
 
 
